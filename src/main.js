@@ -40,10 +40,14 @@ function handleFormSubmit(event) {
 
       lightbox.refresh();
     })
-    .catch(error => {
-      console.error(error);
-    });
-
+     .catch(error => {
+                console.log(error);
+                iziToast.error({
+                    title: 'Error',
+                    message: ` Sorry, there are no images matching your search query. Please, try again!`,
+                    position: 'topRight',
+                })
+               })
   form.reset();
 }
 
